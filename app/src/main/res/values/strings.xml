@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Recipester</string>
+    <string name="category_image">category image</string>
 </resources>
