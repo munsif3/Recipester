@@ -46,14 +46,14 @@ public class Executor extends AsyncTask<Integer, Void, String> {
 
     @Override
     protected String doInBackground(Integer... integers) {
-        String result;
+        String result = null;
         try {
             URL url = new URL(URL + (integers == null || integers.length == 0 ? "" : "/" + integers[0]));
-
+            result = getUrlConnectionResult(url);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return null;
+        return result;
     }
 
     @Override

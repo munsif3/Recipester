@@ -6,7 +6,7 @@ import android.media.Image;
  * Created by Munsif on 3/19/2018.
  */
 
-class Recipe {
+public class Recipe {
 
     private Integer recipeId;
     private String recipeTitle;

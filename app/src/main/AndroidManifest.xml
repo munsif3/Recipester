@@ -3,7 +3,7 @@
     package="com.emc.recipester">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +21,10 @@
         <activity android:name=".ui.RecipesListActivity" />
         <activity android:name=".ui.SplashActivity" />
         <activity android:name=".ui.DescriptionActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
