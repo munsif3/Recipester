@@ -3,6 +3,7 @@ package com.emc.recipester.data;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,15 +33,30 @@ public class CategoryListAdapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View rowView = inflater.inflate(R.layout.category_row, null, true);
+        View row = convertView;
+        ViewHolder holder;
 
-        TextView txtTitle = rowView.findViewById(R.id.txtCategoryName);
-        ImageView imageView = rowView.findViewById(R.id.imgCategoryBackground);
+        if (row == null) {
+            LayoutInflater inflater = context.getLayoutInflater();
+            row = inflater.inflate(R.layout.category_row, parent, false);
+            holder = new ViewHolder(row);
+            row.setTag(holder);
+        } else {
+            holder = (ViewHolder) row.getTag();
+        }
+        holder.categoryName.setText(categoryName[position]);
+        holder.backgroundImage.setImageResource(categoryBackgroundImage[position]);
 
-        txtTitle.setText(categoryName[position]);
-        imageView.setImageResource(categoryBackgroundImage[position]);
+        return row;
+    }
 
-        return rowView;
+    static class ViewHolder {
+        TextView categoryName;
+        ImageView backgroundImage;
+
+        ViewHolder(View view) {
+            this.categoryName = view.findViewById(R.id.txtCategoryName);
+            this.backgroundImage = view.findViewById(R.id.imgCategoryBackground);
+        }
     }
 }
