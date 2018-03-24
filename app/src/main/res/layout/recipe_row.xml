@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgCategoryBackground"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:contentDescription="@string/category_image"
+        android:scaleType="center" />
+
+    <TextView
+        android:id="@+id/txtCategoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/lato_light"
+        android:textColor="@color/textColor"
+        android:textSize="25sp" />
+
+</RelativeLayout>

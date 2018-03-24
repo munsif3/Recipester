@@ -6,4 +6,8 @@
     android:orientation="vertical"
     tools:context="com.emc.recipester.ui.DescriptionActivity">
 
+    <ListView
+        android:id="@+id/lstRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
 </LinearLayout>

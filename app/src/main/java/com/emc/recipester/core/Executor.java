@@ -60,4 +60,7 @@ public class Executor extends AsyncTask<Integer, Void, String> {
     protected void onPostExecute(String s) {
         this.callback.onCallbackCompleted(s);
     }
+
+//    public void execute(String category) {
+//    }
 }

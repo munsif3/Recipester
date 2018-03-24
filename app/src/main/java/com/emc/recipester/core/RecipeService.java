@@ -7,7 +7,7 @@ package com.emc.recipester.core;
 public class RecipeService {
 
     private Callback callback;
-    private static final String BASE_URL = "http://10.0.2.2/api/";
+    private static final String BASE_URL = "https://us-central1-recipes-api-3180b.cloudfunctions.net/app/api/recipes/";
 
     public RecipeService(Callback callback) {
         this.callback = callback;
