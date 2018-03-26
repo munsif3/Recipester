@@ -26,6 +26,10 @@ public class RecipesListActivity extends AppCompatActivity implements AdapterVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes_list);
+
+        String passedText = getIntent().getExtras().getString("category");
+        getSupportActionBar().setTitle(passedText);
+
         LayoutTransition layoutTransition = new LayoutTransition();
         layoutTransition.enableTransitionType(LayoutTransition.APPEARING);
 

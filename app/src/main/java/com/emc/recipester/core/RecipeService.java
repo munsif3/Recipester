@@ -13,8 +13,8 @@ public class RecipeService {
         this.callback = callback;
     }
 
-    public void requestCategoriesById() {
-        Executor executor = new Executor(BASE_URL + "categories", callback);
+    public void requestRecipesByCategories(String category) {
+        Executor executor = new Executor(BASE_URL + category, callback);
         executor.execute();
     }
 

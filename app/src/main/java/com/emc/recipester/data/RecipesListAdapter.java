@@ -16,41 +16,7 @@ import com.emc.recipester.R;
  * Created by Munsif on 3/19/2018.
  */
 
-public class RecipesListAdapter extends ArrayAdapter<String> {
-
-//    private @LayoutRes
-//    int resourceId;
-//
-//
-//    public RecipesListAdapter(@NonNull Context context, @NonNull List<Recipe> recipeList){
-//        super(context, android.R.layout.simple_list_item_activated_2, recipeList);
-//        this.resourceId = android.R.layout.simple_list_item_activated_2;
-//    }
-//
-//    @NonNull
-//    @Override
-//    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-////        Recipe recipe= (Recipe) getItem(position);
-//
-//        if (convertView == null){
-//            convertView = ((LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE))
-//                    .inflate(resourceId,null);
-//        }
-//        return convertView;
-//    }
-
-
-//    private final Activity context;
-//    private final String[] recipeName;
-//    private final Integer[] recipeBackgroundImage;
-//
-//
-//    public RecipesListAdapter(Activity context, String[] recipeName, Integer[] recipeBackgroundImage) {
-//        super( context, R.layout.recipe_row, recipeName);
-//        this.context = context;
-//        this.recipeName = recipeName;
-//        this.recipeBackgroundImage = recipeBackgroundImage;
-//    }
+public class RecipesListAdapter extends ArrayAdapter {
 
     private final Activity context;
     private final String[] recipeName;
@@ -66,21 +32,21 @@ public class RecipesListAdapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View row = convertView;
+        View rowView = convertView;
         RecipesListAdapter.ViewHolder holder;
 
-        if (row == null) {
+        if (rowView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            row = inflater.inflate(R.layout.recipe_row, parent, false);
-            holder = new RecipesListAdapter.ViewHolder(row);
-            row.setTag(holder);
+            rowView = inflater.inflate(R.layout.recipe_row, parent, false);
+            holder = new RecipesListAdapter.ViewHolder(rowView);
+            rowView.setTag(holder);
         } else {
-            holder = (RecipesListAdapter.ViewHolder) row.getTag();
+            holder = (RecipesListAdapter.ViewHolder) rowView.getTag();
         }
         holder.recipeName.setText(recipeName[position]);
         holder.backgroundImage.setImageResource(recipeBackgroundImages[position]);
 
-        return row;
+        return rowView;
     }
 
     static class ViewHolder {
