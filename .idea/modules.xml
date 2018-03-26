@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Recipester.iml" filepath="$PROJECT_DIR$/Recipester.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Food-Recipes.iml" filepath="$PROJECT_DIR$/Food-Recipes.iml" />
+      <module fileurl="file://D:\SEMESTER\2018 - 4th Year - 1st Semester\CTSE\FoodRecipeProject\Food-Recipes\Recipester.iml" filepath="D:\SEMESTER\2018 - 4th Year - 1st Semester\CTSE\FoodRecipeProject\Food-Recipes\Recipester.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
