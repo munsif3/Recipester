@@ -10,7 +10,7 @@ import com.emc.recipester.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static long SPLASH_TIMED_OUT = 3000;
+    private static long SPLASH_TIMED_OUT = 1500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
