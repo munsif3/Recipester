@@ -17,7 +17,7 @@ import com.emc.recipester.R;
  * Created by Munsif on 3/23/2018.
  */
 
-public class CategoryListAdapter extends ArrayAdapter<String> {
+public class CategoryListAdapter extends ArrayAdapter {
 
     private final Activity context;
     private final String[] categoryName;
@@ -33,30 +33,30 @@ public class CategoryListAdapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View row = convertView;
-        ViewHolder holder;
+        View rowView = convertView;
+        ViewHolder viewHolder = null;
 
-        if (row == null) {
+        if (rowView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            row = inflater.inflate(R.layout.category_row, parent, false);
-            holder = new ViewHolder(row);
-            row.setTag(holder);
-        } else {
-            holder = (ViewHolder) row.getTag();
-        }
-        holder.categoryName.setText(categoryName[position]);
-        holder.backgroundImage.setImageResource(categoryBackgroundImage[position]);
+            rowView = inflater.inflate(R.layout.category_row, null);
 
-        return row;
+            viewHolder = new ViewHolder();
+            viewHolder.categoryName = rowView.findViewById(R.id.txtCategoryName);
+            viewHolder.backgroundImage = rowView.findViewById(R.id.imgCategoryBackground);
+
+            rowView.setTag(viewHolder);
+        }
+
+        viewHolder = (ViewHolder) rowView.getTag();
+
+        viewHolder.categoryName.setText(categoryName[position]);
+        viewHolder.backgroundImage.setImageResource(categoryBackgroundImage[position]);
+
+        return rowView;
     }
 
     static class ViewHolder {
         TextView categoryName;
         ImageView backgroundImage;
-
-        ViewHolder(View view) {
-            this.categoryName = view.findViewById(R.id.txtCategoryName);
-            this.backgroundImage = view.findViewById(R.id.imgCategoryBackground);
-        }
     }
 }
