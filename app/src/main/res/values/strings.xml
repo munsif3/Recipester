@@ -2,4 +2,6 @@
     <string name="app_name">Recipester</string>
     <string name="category_image">category image</string>
     <string name="recipe_image">recipe image</string>
+    <string name="ingredients_text">Ingredients</string>
+    <string name="steps_text">Method</string>
 </resources>

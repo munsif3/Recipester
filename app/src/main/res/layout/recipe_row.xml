@@ -11,7 +11,7 @@
         android:layout_height="200dp"
         android:contentDescription="@string/recipe_image"
         android:scaleType="center"
-        android:src="@drawable/spinach_mushroom_omelet_recipe" />
+         />
 
     <View
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         android:fontFamily="@font/lato_light"
         android:text="test"
         android:textColor="@color/textColor"
-        android:textSize="35sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 

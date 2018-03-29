@@ -1,6 +1,7 @@
 package com.emc.recipester.data;
 
-import android.media.Image;
+//import android.graphics.String;
+//import android.media.Image;
 
 /**
  * Created by Munsif on 3/19/2018.
@@ -8,62 +9,62 @@ import android.media.Image;
 
 public class Recipe {
 
-    private Integer recipeId;
-    private String recipeTitle;
-    private Image recipeImage;
-    private String[] recipeIngredients;
-    private String[] recipeSteps;
+    private Integer id;
+    private String name;
+    private String image;
+    private String[] ingredients;
+    private String[] steps;
 
-    public Recipe(Integer recipeId, String recipeTitle, Image recipeImage, String[] recipeIngredients, String[] recipeSteps) {
-        this.recipeId = recipeId;
-        this.recipeTitle = recipeTitle;
-        this.recipeImage = recipeImage;
-        this.recipeIngredients = recipeIngredients;
-        this.recipeSteps = recipeSteps;
+    public Recipe(Integer id, String name, String image, String[] ingredients, String[] steps) {
+        this.id = id;
+        this.name = name;
+        this.image = image;
+        this.ingredients = ingredients;
+        this.steps = steps;
     }
 
     public Recipe() {
 
     }
 
-    public Integer getRecipeId() {
-        return recipeId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setRecipeId(Integer recipeId) {
-        this.recipeId = recipeId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getRecipeTitle() {
-        return recipeTitle;
+    public String getName() {
+        return name;
     }
 
-    public void setRecipeTitle(String recipeTitle) {
-        this.recipeTitle = recipeTitle;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Image getRecipeImage() {
-        return recipeImage;
+    public String getImage() {
+        return image;
     }
 
-    public void setRecipeImage(Image recipeImage) {
-        this.recipeImage = recipeImage;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String[] getRecipeIngredients() {
-        return recipeIngredients;
+    public String[] getIngredients() {
+        return ingredients;
     }
 
-    public void setRecipeIngredients(String[] recipeIngredients) {
-        this.recipeIngredients = recipeIngredients;
+    public void setIngredients(String[] ingredients) {
+        this.ingredients = ingredients;
     }
 
-    public String[] getRecipeSteps() {
-        return recipeSteps;
+    public String[] getSteps() {
+        return steps;
     }
 
-    public void setRecipeSteps(String[] recipeSteps) {
-        this.recipeSteps = recipeSteps;
+    public void setSteps(String[] steps) {
+        this.steps = steps;
     }
 
 }
