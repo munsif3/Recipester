@@ -1,6 +1,7 @@
 package com.emc.recipester.core;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -48,8 +49,9 @@ public class Executor extends AsyncTask<Integer, Void, String> {
     protected String doInBackground(Integer... integers) {
         String result = null;
         try {
-            URL url = new URL(URL + (integers == null || integers.length == 0 ? "" : "/" + integers[0]));
+            URL url = new URL(URL);
             result = getUrlConnectionResult(url);
+            Log.d("datayo", result);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -60,7 +62,4 @@ public class Executor extends AsyncTask<Integer, Void, String> {
     protected void onPostExecute(String s) {
         this.callback.onCallbackCompleted(s);
     }
-
-//    public void execute(String category) {
-//    }
 }

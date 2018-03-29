@@ -18,8 +18,8 @@ public class RecipeService {
         executor.execute();
     }
 
-    public void requestRecipesById(int recipeId) {
-        Executor executor = new Executor(BASE_URL + "recipes", callback);
+    public void requestRecipesById(String category, int recipeId) {
+        Executor executor = new Executor(BASE_URL + category + "/" + recipeId, callback);
         executor.execute(recipeId);
     }
 }
