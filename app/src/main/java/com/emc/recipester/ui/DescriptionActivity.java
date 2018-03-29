@@ -55,6 +55,5 @@ public class DescriptionActivity extends AppCompatActivity implements Callback {
             stepsBuilder.append(i).append("\n\n");
         }
         method.setText(stepsBuilder);
-//        recipeImage.set`
     }
 }

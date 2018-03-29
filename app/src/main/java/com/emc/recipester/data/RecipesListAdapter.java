@@ -91,6 +91,7 @@ public class RecipesListAdapter extends ArrayAdapter {
                 result.backgroundImage.setImageResource(android.R.drawable.gallery_thumb);
             } else {
                 result.backgroundImage.setImageBitmap(result.bitmap);
+                result.backgroundImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
         }
     }
