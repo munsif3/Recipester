@@ -1,25 +1,22 @@
 package com.emc.recipester.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Window;
 
 import com.emc.recipester.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static long SPLASH_TIMED_OUT = 1500;
+    private static long SPLASH_TIMED_OUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        try
-        {
+        try {
             this.getSupportActionBar().hide();
-        }
-        catch (NullPointerException e){
+        } catch (NullPointerException e) {
 
         }
 
@@ -31,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(homeIntent);
                 finish();
             }
-        },SPLASH_TIMED_OUT);
+        }, SPLASH_TIMED_OUT);
 
     }
 }
