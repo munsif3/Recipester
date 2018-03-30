@@ -3,7 +3,7 @@
     package="com.emc.recipester">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,14 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CategoryActivity">
-
-        </activity>
+        <activity
+            android:name=".ui.CategoryActivity"
+            android:configChanges="orientation|screenSize" />
         <activity
             android:name=".ui.RecipesListActivity"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName=".ui.CategoryActivity" />
         <activity
             android:name=".ui.DescriptionActivity"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName=".ui.RecipesListActivity" />
 
         <meta-data
