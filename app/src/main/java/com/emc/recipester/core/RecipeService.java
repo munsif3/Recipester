@@ -14,12 +14,12 @@ public class RecipeService {
     }
 
     public void requestRecipesByCategories(String category) {
-        Executor executor = new Executor(BASE_URL + category, callback);
-        executor.execute();
+        WebServiceExecutor webServiceExecutor = new WebServiceExecutor(BASE_URL + category, callback);
+        webServiceExecutor.execute();
     }
 
     public void requestRecipesById(String category, int recipeId) {
-        Executor executor = new Executor(BASE_URL + category + "/" + recipeId, callback);
-        executor.execute(recipeId);
+        WebServiceExecutor webServiceExecutor = new WebServiceExecutor(BASE_URL + category + "/" + recipeId, callback);
+        webServiceExecutor.execute(recipeId);
     }
 }

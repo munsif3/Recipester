@@ -34,11 +34,8 @@ public class RecipesListActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes_list);
 
-        try {
-            titleName = getIntent().getExtras().getString("category");
-            getSupportActionBar().setTitle(titleName);
-        } catch (NullPointerException e) {
-        }
+        titleName = getIntent().getExtras().getString("category");
+        getSupportActionBar().setTitle(titleName);
 
         RecipeService recipeService = new RecipeService(this);
         recipeService.requestRecipesByCategories(titleName);
@@ -49,9 +46,9 @@ public class RecipesListActivity extends AppCompatActivity implements AdapterVie
 
         listView = findViewById(R.id.recipeListView);
         listView.setOnItemClickListener(this);
+
         recipeListAdapter = new RecipesListAdapter(this, output);
         listView.setAdapter(recipeListAdapter);
-
     }
 
     @Override

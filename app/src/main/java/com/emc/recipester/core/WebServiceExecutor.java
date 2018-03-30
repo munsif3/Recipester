@@ -13,12 +13,12 @@ import java.net.URL;
  * Created by Munsif on 3/21/2018.
  */
 
-public class Executor extends AsyncTask<Integer, Void, String> {
+public class WebServiceExecutor extends AsyncTask<Integer, Void, String> {
 
     private String URL;
     private Callback callback;
 
-    public Executor(String url, Callback cb) {
+    public WebServiceExecutor(String url, Callback cb) {
         this.URL = url;
         this.callback = cb;
     }
@@ -33,7 +33,7 @@ public class Executor extends AsyncTask<Integer, Void, String> {
         int MAX_READ_SIZE = 1000000;
         char[] buffer = new char[MAX_READ_SIZE];
         int readSize;
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuffer = new StringBuilder();
 
         while (((readSize = streamReader.read(buffer)) != -1) && MAX_READ_SIZE > 0) {
             if (readSize > MAX_READ_SIZE) {
