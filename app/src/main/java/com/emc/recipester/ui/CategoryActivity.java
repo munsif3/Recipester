@@ -3,6 +3,7 @@ package com.emc.recipester.ui;
 import android.animation.LayoutTransition;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +12,8 @@ import android.widget.ListView;
 
 import com.emc.recipester.R;
 import com.emc.recipester.data.CategoryListAdapter;
+
+import java.io.Serializable;
 
 public class CategoryActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -25,15 +28,22 @@ public class CategoryActivity extends AppCompatActivity implements AdapterView.O
             R.drawable.snack,
             R.drawable.soup
     };
+    ListView listView;
+    static final String STATE_CATEGORY = "categoryList.state";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        LayoutTransition layoutTransition = new LayoutTransition();
-        layoutTransition.enableTransitionType(LayoutTransition.APPEARING);
 
-        ListView listView = findViewById(R.id.lstCategories);
+        LayoutTransition layoutTransition = new LayoutTransition();
+        layoutTransition.enableTransitionType(LayoutTransition.CHANGING);
+
+        if (savedInstanceState != null) {
+            listView = (ListView) savedInstanceState.getSerializable(STATE_CATEGORY);
+        }
+
+        listView = findViewById(R.id.lstCategories);
         listView.setOnItemClickListener(this);
 
         ListAdapter categoriesAdapter = new CategoryListAdapter(this, categories, categoryImages);
@@ -45,5 +55,11 @@ public class CategoryActivity extends AppCompatActivity implements AdapterView.O
         Intent intent = new Intent(this, RecipesListActivity.class);
         intent.putExtra("category", categories[position]);
         CategoryActivity.this.startActivity(intent);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        outState.putSerializable(STATE_CATEGORY, (Serializable) listView.onSaveInstanceState());
     }
 }

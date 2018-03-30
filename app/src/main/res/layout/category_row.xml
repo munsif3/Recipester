@@ -10,7 +10,7 @@
         android:layout_height="120dp"
         android:contentDescription="@string/category_image"
         android:src="@drawable/dessert"
-        android:scaleType="center" />
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/txtCategoryName"
