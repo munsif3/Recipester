@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.emc.recipester.ui.DescriptionActivity">
 
     <ScrollView
@@ -16,73 +16,85 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imgRecipe"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:layout_constraintTop_toTopOf="parent" />
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/imageHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp">
 
-            <TextView
-                android:id="@+id/txtItemName"
+                <ImageView
+                    android:id="@+id/imgRecipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_bg" />
+
+                <TextView
+                    android:id="@+id/txtItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_light"
+                    android:paddingBottom="10sp"
+                    android:paddingStart="10sp"
+                    android:textColor="@color/textColor"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_light"
-                android:paddingBottom="10sp"
-                android:paddingStart="10sp"
-                android:text="TextView"
-                android:textColor="@color/gradient_end"
-                android:textSize="25sp"
-                app:layout_constraintTop_toBottomOf="@+id/imgRecipe" />
+                app:layout_constraintTop_toBottomOf="@+id/imageHolder">
 
-            <TextView
-                android:id="@+id/txtIngredientDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_light"
-                android:paddingStart="10sp"
-                android:paddingTop="10sp"
-                android:text="@string/ingredients_text"
-                android:textColor="@color/gradient_end"
-                android:textSize="25sp"
-                app:layout_constraintTop_toBottomOf="@+id/txtItemName" />
+                <TextView
+                    android:id="@+id/txtIngredientDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_light"
+                    android:paddingStart="10sp"
+                    android:paddingTop="10sp"
+                    android:text="@string/ingredients_text"
+                    android:textColor="@color/gradient_end"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toBottomOf="parent" />
 
-            <TextView
-                android:id="@+id/txtIngredients"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato"
-                android:paddingBottom="10sp"
-                android:paddingStart="10sp"
-                android:paddingTop="10sp"
-                android:text="TextView"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/txtIngredientDesc" />
+                <TextView
+                    android:id="@+id/txtIngredients"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato"
+                    android:paddingBottom="10sp"
+                    android:paddingStart="10sp"
+                    android:paddingTop="10sp"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@+id/txtIngredientDesc" />
 
-            <TextView
-                android:id="@+id/txtStepsDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_light"
-                android:paddingStart="10sp"
-                android:paddingTop="10sp"
-                android:text="@string/steps_text"
-                android:textColor="@color/gradient_end"
-                android:textSize="25sp"
-                app:layout_constraintTop_toBottomOf="@+id/txtIngredients" />
+                <TextView
+                    android:id="@+id/txtStepsDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_light"
+                    android:paddingStart="10sp"
+                    android:paddingTop="10sp"
+                    android:text="@string/steps_text"
+                    android:textColor="@color/gradient_end"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toBottomOf="@+id/txtIngredients" />
 
-            <TextView
-                android:id="@+id/txtSteps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato"
-                android:paddingStart="10sp"
-                android:paddingTop="10sp"
-                android:text="TextView"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/txtStepsDesc" />
+                <TextView
+                    android:id="@+id/txtSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato"
+                    android:paddingStart="10sp"
+                    android:paddingTop="10sp"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@+id/txtStepsDesc" />
+            </android.support.constraint.ConstraintLayout>
+
         </android.support.constraint.ConstraintLayout>
-
     </ScrollView>
-
-
 </LinearLayout>
