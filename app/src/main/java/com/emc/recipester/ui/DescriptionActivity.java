@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.emc.recipester.R;
 import com.emc.recipester.core.Callback;
@@ -44,65 +45,25 @@ public class DescriptionActivity extends AppCompatActivity implements Callback {
 
     @Override
     public void onCallbackCompleted(String data) {
-        Gson gson = new Gson();
-        Type type = new TypeToken<Recipe>() {
-        }.getType();
-        Recipe recipe = gson.fromJson(data, type);
-        recipeTitle.setText(recipe.getName());
-        StringBuilder ingredientsBuilder = new StringBuilder();
-        for (String i : recipe.getIngredients()) {
-            ingredientsBuilder.append(i).append("\n\n");
+        if (data != null && data.length() != 0) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<Recipe>() {
+            }.getType();
+            Recipe recipe = gson.fromJson(data, type);
+            recipeTitle.setText(recipe.getName());
+            StringBuilder ingredientsBuilder = new StringBuilder();
+            for (String i : recipe.getIngredients()) {
+                ingredientsBuilder.append(i).append("\n\n");
+            }
+            ingredients.setText(ingredientsBuilder);
+            StringBuilder stepsBuilder = new StringBuilder();
+            for (String i : recipe.getSteps()) {
+                stepsBuilder.append(i).append("\n\n");
+            }
+            method.setText(stepsBuilder);
+            imageManager.displayImage(recipe.getImage(), recipeImage);
+        } else {
+            Toast.makeText(getApplicationContext(), "Recipes Failed to Load, Please Connect to Internet and Select the Recipe!", Toast.LENGTH_LONG).show();
         }
-        ingredients.setText(ingredientsBuilder);
-        StringBuilder stepsBuilder = new StringBuilder();
-        for (String i : recipe.getSteps()) {
-            stepsBuilder.append(i).append("\n\n");
-        }
-        method.setText(stepsBuilder);
-//        ViewHolder holder = new ViewHolder(recipeTitle, ingredients, method, recipeImage);
-        imageManager.displayImage(recipe.getImage(), recipeImage);
-
-//        holder.imageURL = recipe.getImage();
-//        new DownloadAsyncTask().execute(holder);
     }
-
-//    static class ViewHolder {
-//        TextView recipe;
-//        TextView ingredients;
-//        TextView method;
-//        ImageView backgroundImage;
-//
-//        ViewHolder(TextView tvRecipe, TextView tvIngredients, TextView tvMethod, ImageView ivImage) {
-//            this.recipe = tvRecipe;
-//            this.ingredients = tvIngredients;
-//            this.method = tvMethod;
-//            this.backgroundImage = ivImage;
-//        }
-//    }
-//
-//    class DownloadAsyncTask extends AsyncTask<ViewHolder, Void, ViewHolder> {
-//
-//        @Override
-//        protected ViewHolder doInBackground(ViewHolder... params) {
-//            ViewHolder viewHolder = params[0];
-//            try {
-//                URL imageURL = new URL(viewHolder.imageURL);
-//                viewHolder.bitmap = BitmapFactory.decodeStream(imageURL.openStream());
-//            } catch (IOException e) {
-//                Log.e("error", "Downloading Image Failed");
-//                viewHolder.bitmap = null;
-//            }
-//            return viewHolder;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(ViewHolder result) {
-//            if (result.bitmap == null) {
-//                result.backgroundImage.setImageResource(android.R.drawable.gallery_thumb);
-//            } else {
-//                result.backgroundImage.setImageBitmap(result.bitmap);
-//                result.backgroundImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//            }
-//        }
-//    }
 }
