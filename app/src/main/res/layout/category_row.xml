@@ -21,6 +21,6 @@
         android:fontFamily="@font/lato_light"
         android:textColor="@color/textColor"
         android:text="test"
-        android:textSize="25sp" />
+        android:textSize="30sp" />
 
 </RelativeLayout>
