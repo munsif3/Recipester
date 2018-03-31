@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.emc.recipester.R;
 import com.emc.recipester.core.Callback;
@@ -61,13 +62,17 @@ public class RecipesListActivity extends AppCompatActivity implements AdapterVie
 
     @Override
     public void onCallbackCompleted(String data) {
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<Recipe>>() {
-        }.getType();
-        output = gson.fromJson(data, type);
-        recipeListAdapter.clear();
-        recipeListAdapter.addAll(output);
-        recipeListAdapter.notifyDataSetChanged();
+        if (data != null && data.length() != 0) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<Recipe>>() {
+            }.getType();
+            output = gson.fromJson(data, type);
+            recipeListAdapter.clear();
+            recipeListAdapter.addAll(output);
+            recipeListAdapter.notifyDataSetChanged();
+        } else {
+            Toast.makeText(getApplicationContext(), "Recipes Failed to Load, Please try again by selecting a Category!", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
