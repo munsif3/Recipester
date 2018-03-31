@@ -139,14 +139,12 @@ public class ImageManager {
                     // Thread waits until there are images in the
                     // queue to be retrieved
                     if (imageQueue.imageRefStack.size() == 0) {
-                        Log.d("xxxxx", "imageRefStack.size() == 0");
                         synchronized (imageQueue.imageRefStack) {
                             imageQueue.imageRefStack.wait();
                         }
                     }
                     // When we have images to be loaded
                     if (imageQueue.imageRefStack.size() != 0) {
-                        Log.d("xxxxx", "imageRefStack.size() != 0");
                         ImageRef imageToLoad;
                         synchronized (imageQueue.imageRefStack) {
                             imageToLoad = imageQueue.imageRefStack.pop();
@@ -156,7 +154,6 @@ public class ImageManager {
                         Object tag = imageToLoad.imageView.getTag();
                         // Make sure we have the right view - thread safety defender
                         if (tag != null && ((String) tag).equals(imageToLoad.url)) {
-                            Log.d("xxxxx", "tag != null");
                             BitmapDisplayer bmpDisplayer = new BitmapDisplayer(bmp, imageToLoad.imageView);
                             Activity context = (Activity) imageToLoad.imageView.getContext();
                             context.runOnUiThread(bmpDisplayer);
@@ -167,12 +164,10 @@ public class ImageManager {
                         }
                     }
                     if (Thread.interrupted()) {
-                        Log.d("xxxxx", "Thread.interrupted()");
                         break;
                     }
                 }
             } catch (InterruptedException e) {
-                Log.d("xxxxx", "InterruptedException");
 
             }
         }
