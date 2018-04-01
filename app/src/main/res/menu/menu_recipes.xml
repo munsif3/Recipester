@@ -2,14 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/language_english"
-        android:title="@string/menu_title_english"/>
+        android:title="@string/menu_title_english" />
     <item
         android:id="@+id/language_tamil"
         android:title="@string/menu_title_tamil" />
     <item
         android:id="@+id/language_spanish"
-        android:title="@string/menu_title_spanish"/>
-    <item
-        android:id="@+id/language_italian"
-        android:title="@string/menu_title_italian"/>
+        android:title="@string/menu_title_spanish" />
 </menu>

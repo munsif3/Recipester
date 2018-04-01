@@ -14,11 +14,13 @@ public class RecipeService {
     }
 
     public void requestRecipesByCategories(String category) {
+        category = category.replaceAll(" ", "%20");
         WebServiceExecutor webServiceExecutor = new WebServiceExecutor(BASE_URL + category, callback);
         webServiceExecutor.execute();
     }
 
     public void requestRecipesById(String category, int recipeId) {
+        category = category.replaceAll(" ", "%20");
         WebServiceExecutor webServiceExecutor = new WebServiceExecutor(BASE_URL + category + "/" + recipeId, callback);
         webServiceExecutor.execute(recipeId);
     }
