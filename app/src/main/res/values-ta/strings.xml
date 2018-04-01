@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories_array">
+        <item>பானம்</item>
+        <item>காலை உணவு</item>
+        <item>மதிய இடை உணவு</item>
+        <item>இனிப்பு</item>
+        <item>இரவு உணவு</item>
+        <item>மதிய உணவு</item>
+        <item>சிற்றுண்டி</item>
+        <item>சூப்</item>
+    </string-array>
+</resources>

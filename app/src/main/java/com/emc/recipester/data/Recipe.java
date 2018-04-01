@@ -1,8 +1,5 @@
 package com.emc.recipester.data;
 
-//import android.graphics.String;
-//import android.media.Image;
-
 /**
  * Created by Munsif on 3/19/2018.
  */

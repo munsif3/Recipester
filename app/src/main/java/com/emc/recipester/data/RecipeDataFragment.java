@@ -1,6 +1,5 @@
 package com.emc.recipester.data;
 
-
 import android.app.Fragment;
 import android.os.Bundle;
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories_array">
+        <item>Bebida</item>
+        <item>Desayuno</item>
+        <item>Desayuno tardío</item>
+        <item>Postre</item>
+        <item>Cena</item>
+        <item>Almuerzo</item>
+        <item>Bocadillo</item>
+        <item>Sopa</item>
+    </string-array>
+</resources>

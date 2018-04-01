@@ -25,7 +25,8 @@
 
         <activity
             android:name=".ui.CategoryActivity"
-            android:configChanges="orientation|screenSize" />
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
 
         <activity
             android:name=".ui.RecipesListActivity"

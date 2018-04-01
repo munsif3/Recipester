@@ -4,4 +4,18 @@
     <string name="recipe_image">recipe image</string>
     <string name="ingredients_text">Ingredients</string>
     <string name="steps_text">Method</string>
+    <string name="menu_title_english">English</string>
+    <string name="menu_title_tamil">Tamil</string>
+    <string name="menu_title_spanish">Spanish</string>
+
+    <string-array name="categories_array">
+        <item>Beverage</item>
+        <item>Breakfast</item>
+        <item>Brunch</item>
+        <item>Dessert</item>
+        <item>Dinner</item>
+        <item>Lunch</item>
+        <item>Snack</item>
+        <item>Soup</item>
+    </string-array>
 </resources>
